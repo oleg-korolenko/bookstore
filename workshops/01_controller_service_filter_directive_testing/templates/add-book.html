@@ -1,14 +1,12 @@
-<div id="bookDetails" class="container row animated fadeInUpSmall">
+<div id="bookDetails" class="container row animated fadeInUpSmall" ng-controller="BookController">
   <div class="col s5 m5">
     <div class="card-image waves-effect waves-block waves-light">
       <label>Select Cover</label>
-
 
       <!--TODO: Display list of covers in the select list -->
       <select class="browser-default" ng-model="book.cover">
         <option ng-repeat="cover in book.covers" value="{{cover}}">{{cover}}</option>
       </select>
-
 
       <!-- TODO: Display the selected book's cover below here -->
       <img ng-src="{{book.cover}}"/>

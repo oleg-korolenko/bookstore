@@ -1,6 +1,6 @@
-<div class="row container">
-  <input type="search" placeholder="search books" class="validate" ng-model="model.title"/>
-  <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in model.books | filter:model.title">
+<div class="row container" ng-controller="BookController as ctrl">
+  <input type="search" placeholder="search books" class="validate" ng-model="model.searchTitle"/>
+  <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in model.books | filter:model.searchTitle">
     <div class="card small">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" ng-src="{{book.cover}}" alt="{{book.title}}">
@@ -12,11 +12,9 @@
         <span class="card-title grey-text text-darken-4">{{book.title}}<i class="mdi-navigation-close right"></i></span>
         <p>{{book.description}}</p>
         <p>
-        <a ng-href="#/books/{{book.bookID}}">See more details</a>
+        <a ng-href="#/books/{{book.bookID}}" ng-click="">See more details</a>
         </p>
       </div>
     </div>
   </div>
 </div>
-
-
